@@ -1,8 +1,8 @@
-import { SSEClient } from "sse-client-web";
+const { SSEClient } = require("sse-client-web");
 
 // subscribe from URL
 const client = new SSEClient({
-  baseURL: "localhost:8000",
+  baseURL: "/localhost:8000",
 });
 
 client.onError((url, event) => {
@@ -21,6 +21,9 @@ const subscriber = client
     /** your codes here */
     console.log(data);
   });
+
+// await subscriber.waitUntilOpened();
+// console.log("connection established.");
 
 // ...
 
