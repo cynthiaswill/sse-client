@@ -1,0 +1,15 @@
+{
+  "name": "sse-client",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yi.zhang",
+  "license": "ISC",
+  "dependencies": {
+    "sse-client-web": "^1.7.0"
+  }
+}
