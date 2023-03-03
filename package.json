@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "sse-client-web": "^1.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
   }
 }
