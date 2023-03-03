@@ -1,34 +1,16 @@
-const { SSEClient } = require("sse-client-web");
+var EventSource = require("eventsource");
 
-// subscribe from URL
-const client = new SSEClient({
-  baseURL: "/localhost:8000",
-});
+const eventSource = new EventSource("http://localhost:8000");
 
-client.onError((url, event) => {
-  console.log(url, event);
-});
+function updateMessage(message) {
+  console.log(message);
+}
 
-const subscriber = client
-  .subscribe("/")
-  //   .on("event1", (data) => {
-  //     /** your codes here */
-  //   })
-  //   .on("event2", (data) => {
-  //     /** your codes here */
-  //   })
-  .on("*", (data) => {
-    /** your codes here */
-    console.log(data);
-  });
+eventSource.onmessage = function (event) {
+  console.dir(event);
+};
 
-// await subscriber.waitUntilOpened();
-// console.log("connection established.");
-
-// ...
-
-// unsubscribe events
-// subscriber.off("event1");
-// subscriber.off("event2");
-// or unsubscribe all events
-// subscriber.offAll();
+eventSource.onerror = function () {
+  updateMessage("Server closed connection");
+  eventSource.close();
+};

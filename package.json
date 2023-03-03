@@ -10,8 +10,7 @@
   "author": "yi.zhang",
   "license": "ISC",
   "dependencies": {
-    "eventsource": "^2.0.2",
-    "sse-client-web": "^1.7.0"
+    "eventsource": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.21"
